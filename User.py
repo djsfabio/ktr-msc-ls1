@@ -32,7 +32,7 @@ class User:
 
     # Setters
     def set_name(self, newName):
-        if len(newName) >= 5:
+        if len(newName) >= 2:
             self.__name = newName
         else:
             raise Exception(

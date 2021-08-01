@@ -73,6 +73,7 @@ def login():
                 print("Company :", contact.get_company())
                 print("E-Mail :", contact.get_email())
                 print("Telephone :", contact.get_telephone())
+            print(colored("--------------------------------", "green", "on_green"))
             input("To return to the previous page, please press the enter key.")
         elif userChoiceLogin == 3:
             loginPage = False
@@ -172,7 +173,7 @@ def getLibrary():
                 listOfContacts.append(newContact)
     else:
         os.system('cls' if os.name == 'nt' else 'clear')
-        print(colored("Please create a profile before logging in.", "red"))
+        print(colored("Please create a contact to see your library.", "red"))
         exit()
     return listOfContacts
 
