@@ -66,6 +66,8 @@ def login():
         if userChoiceLogin == 1:
             createContact()
         elif userChoiceLogin == 2:
+            os.system('cls' if os.name == 'nt' else 'clear')
+            print(colored(pyfiglet.figlet_format("Library", font="slant"), "green"))
             listOfContacts = getLibrary()
             for contact in listOfContacts:
                 print(colored("--------------------------------", "green", "on_green"))
