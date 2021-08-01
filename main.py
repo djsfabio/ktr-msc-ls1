@@ -1,11 +1,11 @@
 import csv
 import getpass
+import os
 import time
 from pathlib import Path
 
 import pyfiglet
 from termcolor import colored
-import os
 
 from Contact import Contact
 from User import User
@@ -63,9 +63,9 @@ def login():
         print(colored("2. ", "green"), "See my library")
         print(colored("3. ", "red"), "Log out")
         userChoiceLogin = int(input("\nPlease choose one of the following options : "))
-        if userChoiceLogin == 1 :
+        if userChoiceLogin == 1:
             createContact()
-        elif userChoiceLogin == 2 :
+        elif userChoiceLogin == 2:
             listOfContacts = getLibrary()
             for contact in listOfContacts:
                 print(colored("--------------------------------", "green", "on_green"))
@@ -75,8 +75,7 @@ def login():
                 print("Telephone :", contact.get_telephone())
             input("To return to the previous page, please press the enter key.")
         elif userChoiceLogin == 3:
-            loginPage=False
-
+            loginPage = False
 
 
 def create():
@@ -107,6 +106,7 @@ def create():
     print("Back to the home page...")
     time.sleep(5)
 
+
 def createContact():
     newContact = Contact()
     os.system('cls' if os.name == 'nt' else 'clear')
@@ -134,6 +134,7 @@ def createContact():
     print("Back to the previous page...")
     time.sleep(5)
 
+
 def exitProgram():
     os.system('cls' if os.name == 'nt' else 'clear')
     print(colored("We hope to see you very soon.", "cyan"))
@@ -146,11 +147,13 @@ def addUser(user):
         writer.writerow(
             [user.get_name(), user.get_company(), user.get_email(), user.get_telephone(), user.get_password()])
 
+
 def addContact(contact):
     with open('library.csv', 'a+') as file:
         writer = csv.writer(file)
         writer.writerow(
             [contact.get_name(), contact.get_company(), contact.get_email(), contact.get_telephone()])
+
 
 def getLibrary():
     listOfContacts = []
@@ -172,6 +175,7 @@ def getLibrary():
         print(colored("Please create a profile before logging in.", "red"))
         exit()
     return listOfContacts
+
 
 def getListOfUsers():
     listOfUsers = []

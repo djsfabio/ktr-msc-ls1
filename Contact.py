@@ -1,7 +1,9 @@
 import re
 
 EMAIL_REGEX = re.compile(r"[^@]+@[^@]+\.[^@]+")
-TELEPHONE_REGEX = re.compile(r"^(?:(?:\+|00)33[\s.-]{0,3}(?:\(0\)[\s.-]{0,3})?|0)[1-9](?:(?:[\s.-]?\d{2}){4}|\d{2}(?:[\s.-]?\d{3}){2})$")
+TELEPHONE_REGEX = re.compile(
+    r"^(?:(?:\+|00)33[\s.-]{0,3}(?:\(0\)[\s.-]{0,3})?|0)[1-9](?:(?:[\s.-]?\d{2}){4}|\d{2}(?:[\s.-]?\d{3}){2})$")
+
 
 class Contact:
 
@@ -29,15 +31,16 @@ class Contact:
         if newName != "":
             if len(newName) >= 5:
                 self.__name = newName
-            else :
-                raise Exception("Fill in a correct name and first name (At least 2 characters for the name and the first name separated by a space).")
+            else:
+                raise Exception(
+                    "Fill in a correct name and first name (At least 2 characters for the name and the first name separated by a space).")
                 exit()
 
     def set_company(self, newCompany):
-        if newCompany != "" :
-            if len(newCompany) <= 100 :
+        if newCompany != "":
+            if len(newCompany) <= 100:
                 self.__company = newCompany.capitalize()
-            else :
+            else:
                 raise Exception("Please enter a company name of less than 100 characters.")
                 exit()
 
@@ -55,4 +58,3 @@ class Contact:
                 exit()
             else:
                 self.__telephone = newTelephone
-
