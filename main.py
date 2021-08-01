@@ -58,7 +58,7 @@ def login():
     loginPage = True
     while loginPage:
         os.system('cls' if os.name == 'nt' else 'clear')
-        print(colored(pyfiglet.figlet_format(userId, font="slant"), "green"))
+        print(colored(pyfiglet.figlet_format("Welcome " + userId, font="slant"), "green"))
         print(colored("1. ", "blue"), "Add a contact")
         print(colored("2. ", "green"), "See my library")
         print(colored("3. ", "red"), "Log out")
