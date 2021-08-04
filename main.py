@@ -36,10 +36,10 @@ def main():
             login()
 
         elif userChoice == 2:
-            createUser()
+            create_user()
 
         elif userChoice == 3:
-            exitProgram()
+            exit_program()
 
 
 def login():
@@ -47,22 +47,21 @@ def login():
     Function allowing to connect to the service by verifying that the user exists and uses the correct password.
     """
     os.system('cls' if os.name == 'nt' else 'clear')
-    print(colored(pyfiglet.figlet_format("Log In", font="slant"), "green"))
+    print(colored(pyfiglet.figlet_format("Log In", font="slant"), "cyan"))
     notLogIn = True
     while notLogIn:
         userId = input("Please enter your login ID : ")
         userPswd = getpass.getpass('Please enter your password : ')
-        listOfUsers = getListOfUsers()
+        listOfUsers = get_list_of_users()
         for aUser in listOfUsers:
             if userId == aUser.get_name() and userPswd == aUser.get_password():
-                print(colored("Welcome back " + userId, "cyan"))
                 actualUser = aUser
                 notLogIn = False
                 break
         print("The id of connexion or the password you’ve entered is incorrect. Please try again.")
-    choicePageLogIn(userId)
+    choice_page_logIn(userId)
 
-def choicePageLogIn(userId):
+def choice_page_logIn(userId):
     """
     Choice page allowing actions to be performed once logged in.
     :param userId: ID of the user we are logged in.
@@ -71,7 +70,7 @@ def choicePageLogIn(userId):
     loginPage = True
     while loginPage:
         os.system('cls' if os.name == 'nt' else 'clear')
-        print(colored(pyfiglet.figlet_format("Welcome " + userId, font="slant"), "green"))
+        print(colored(pyfiglet.figlet_format("Welcome " + userId, font="slant"), "cyan"))
         print(colored("[1] ", "blue"), "Add a contact")
         print(colored("[2] ", "green"), "See my library")
         print(colored("[3] ", "red"), "Log out")
@@ -86,11 +85,11 @@ def choicePageLogIn(userId):
             else:
                 print("Please select a value between 1 and 3.")
         if userChoiceLogin == 1:
-            createContact(userId)
+            create_contact(userId)
         elif userChoiceLogin == 2:
             os.system('cls' if os.name == 'nt' else 'clear')
             print(colored(pyfiglet.figlet_format("Library of " + userId, font="slant"), "green"))
-            listOfContacts = getLibrary(userId)
+            listOfContacts = get_library(userId)
             for contact in listOfContacts:
                 print(colored("--------------------------------", "green", "on_green"))
                 print("Name :", contact.get_name())
@@ -103,7 +102,7 @@ def choicePageLogIn(userId):
             loginPage = False
 
 
-def createUser():
+def create_user():
     """
     Allows you to create a new user for the service.
     """
@@ -129,12 +128,12 @@ def createUser():
     print("Telephone :", newUser.get_telephone())
     print(colored("--------------------------------", "green", "on_green"))
 
-    addUser(newUser)
+    add_user(newUser)
 
     print("Back to the home page...")
     time.sleep(3)
 
-def exitProgram():
+def exit_program():
     """
     Allows you to exit the program running.
     """
@@ -142,7 +141,7 @@ def exitProgram():
     print(colored(pyfiglet.figlet_format("We hope to see you very soon.", font="slant"), "cyan"))
     exit()
 
-def createContact(userId):
+def create_contact(userId):
     """
     Allows you to create a new contact for the current user's library.
     :param userId: ID of the user on whom we want to create a new contact.
@@ -168,13 +167,13 @@ def createContact(userId):
     print("Telephone :", newContact.get_telephone())
     print(colored("--------------------------------", "green", "on_green"))
 
-    addContact(newContact, userId)
+    add_contact(newContact, userId)
 
     print("Back to the previous page...")
     time.sleep(3)
 
 
-def addUser(user):
+def add_user(user):
     """
     Add a new user to the users.csv file
     :param user: The user we want to add in the csv file
@@ -185,7 +184,7 @@ def addUser(user):
             [user.get_name(), user.get_company(), user.get_email(), user.get_telephone(), user.get_password()])
 
 
-def addContact(contact, userId):
+def add_contact(contact, userId):
     """
     Add a new contact in the library of the current user
     :param contact: Is the contact we want to add
@@ -197,7 +196,7 @@ def addContact(contact, userId):
             [contact.get_name(), contact.get_company(), contact.get_email(), contact.get_telephone()])
 
 
-def getLibrary(userId):
+def get_library(userId):
     """
     Get the contact library linked to the user passed in parameter
     :param userId:Is the current user name.
@@ -224,7 +223,7 @@ def getLibrary(userId):
     return listOfContacts
 
 
-def getListOfUsers():
+def get_list_of_users():
     """
     Get the list of all the users stocked in the users.csv file.  
     """
