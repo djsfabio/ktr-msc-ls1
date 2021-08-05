@@ -35,17 +35,17 @@ python main.py
 
 ## Step 1 - Create the repository ✅
 
-1. Create your github account if you don’t have one yet
-2. Createa a repository named ktr-msc-ls1
+1. Create your github account if you don’t have one yet  
+2. Createa a repository named ktr-msc-ls1  
 
 ## Step 2 - "Profile" Interface ✅
 
-Create a "profile" interface allowing the user of your application to save his own information, in the following form :
+Create a "profile" interface allowing the user of your application to save his own information, in the following form :  
 
-• Name (mandatory short text field)
-• Company name (optional short text field)
-• Email address (optional long text field)
-• Telephone number (optional phone field)
+• Name (mandatory short text field)  
+• Company name (optional short text field)  
+• Email address (optional long text field)  
+• Telephone number (optional phone field)  
 
 ### + Bonus 1 - Save the datas ✅
 Make sure that this data is persistent.
@@ -58,11 +58,11 @@ Create one profile per user.
 Allow your users to log out. 
 
 ##Step 4 - "Library" Interface ✅
-Create a "library" interface that allow your user to add new business cards to your application with the following fields :
-• Name (optional short text field)
-• Company name (optional short text field)
-• Email address (mandatory email field)
-• Telephone number (optional phone field)
+Create a "library" interface that allow your user to add new business cards to your application with the following fields :  
+• Name (optional short text field)  
+• Company name (optional short text field)  
+• Email address (mandatory email field)  
+• Telephone number (optional phone field)  
 
 ## Final bonus - Business card exchange ❌
 Allow two users of your application on two different devices to automatically exchange their profile information and add it to their business card "library".
