@@ -57,7 +57,7 @@ Create one profile per user.
 ### + Bonus 3 - User switch ✅
 Allow your users to log out. 
 
-##Step 4 - "Library" Interface ✅
+## Step 4 - "Library" Interface ✅
 Create a "library" interface that allow your user to add new business cards to your application with the following fields :  
 • Name (optional short text field)  
 • Company name (optional short text field)  
