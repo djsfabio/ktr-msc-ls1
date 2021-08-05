@@ -59,6 +59,7 @@ Allow your users to log out.
 
 ## Step 4 - "Library" Interface ✅
 Create a "library" interface that allow your user to add new business cards to your application with the following fields :  
+
 • Name (optional short text field)  
 • Company name (optional short text field)  
 • Email address (mandatory email field)  
