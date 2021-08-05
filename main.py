@@ -1,3 +1,5 @@
+#!/Users/fabiodjs/.local/share/virtualenvs/ktr-msc-ls1-7epH9NVt/bin/python
+
 import csv
 import getpass
 import os
@@ -60,6 +62,7 @@ def login():
                 break
         print("The id of connexion or the password you’ve entered is incorrect. Please try again.")
     choice_page_logIn(userId)
+
 
 def choice_page_logIn(userId):
     """
@@ -133,6 +136,7 @@ def create_user():
     print("Back to the home page...")
     time.sleep(3)
 
+
 def exit_program():
     """
     Allows you to exit the program running.
@@ -140,6 +144,7 @@ def exit_program():
     os.system('cls' if os.name == 'nt' else 'clear')
     print(colored(pyfiglet.figlet_format("We hope to see you very soon.", font="slant"), "cyan"))
     exit()
+
 
 def create_contact(userId):
     """
@@ -203,7 +208,7 @@ def get_library(userId):
     :return:
     """
     listOfContacts = []
-    my_file = Path("./"+ str(userId)+ "_library.csv")
+    my_file = Path("./" + str(userId) + "_library.csv")
     if my_file.is_file():
         with open(userId + '_library.csv', 'r') as fp:
             reader = csv.reader(fp, delimiter=',')
